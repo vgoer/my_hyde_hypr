@@ -1,0 +1,130 @@
+# Since Pyprland is very configurable, this is just a basic example config
+# to get you started. For more information, see the Pyprland documentation:
+# https://hyprland-community.github.io/pyprland/
+
+
+# Since You are using Hyde, you can use `hyde-shell` to run pypr commands
+# See  'hyde-shell pypr --help' for more information on how to use it!
+
+[pyprland]
+    # pypr has a lot of plugins, but this is just a basic example config
+    # https://hyprland-community.github.io/pyprland/Plugins.html
+    plugins = [ 
+        "scratchpads",
+        "expose",
+        "fetch_client_menu",
+        "lost_windows",
+        "magnify",
+        "shift_monitors",
+        "toggle_special",
+        "workspaces_follow_focus",
+        "layout_center",
+        "shortcuts_menu",
+        "fcitx5_switcher",
+    ]
+
+# using variables for demonstration purposes (not needed)
+[pyprland.variables]
+    # term_with_class = "hyde-shell app -T" # You cannot set the class for this
+    # term_with_class = "alacritty --class"
+    # term_with_class = "foot --app-id"
+    term_with_class = "kitty --class"
+
+
+[scratchpads.console]
+    # This is a drop-down terminal configuration
+    animation = "fromTop"
+    class     = "console-dropdown"
+    command   = "[term_with_class] console-dropdown"
+    max_size  = "90% 100%"
+    size      = "75% 60%"
+    lazy = true
+
+
+
+[scratchpads.term]
+    animation = "fromTop"
+    command = "[term_with_class] main-dropterm"
+    class = "main-dropterm"
+    max_size  = "90% 100%"
+    size      = "75% 60%"
+    lazy = true
+
+
+[layout_center]
+    margin = 60
+    offset = [0, 30]
+    next = "movefocus r"
+    prev = "movefocus l"
+    next2 = "movefocus d"
+    prev2 = "movefocus u"
+
+
+[scratchpads.term_btop]
+    animation = "fromRight"
+    command = "kitty --config ~/.config/kitty/kitty.conf --class term_btop btop"
+    class = "term_btop"
+    size = "48% 70%"
+    margin = 10
+    lazy = true
+
+[scratchpads.term_htop]
+    animation = "fromLeft"
+    command = "kitty --config ~/.config/kitty/kitty.conf --class term_htop htop"
+    class = "term_htop"
+    size = "48% 70%"
+    margin = 10
+    lazy = true
+
+
+# Top-Center musicfox
+[scratchpads.term_musicfox]
+    animation = "fromTop"
+    command = "kitty --config ~/.config/kitty/kitty.conf --class term_musicfox musicfox"
+    class = "term_musicfox"
+    size = "50% 30%"
+    position = "25% 25%"
+    lazy = true
+
+[scratchpads.tcava]
+    animation = "fromTop"
+    command = "kitty --config ~/.config/kitty/kitty.conf --class tcava cava -p ~/.config/cava/theme/macchiato"
+    class = "tcava"
+    size = "50% 18%"
+    position = "25% 5%"
+    lazy = true
+
+[scratchpads.rcava]
+    animation = "fromRight"
+    command = "kitty --config ~/.config/kitty/kitty.conf --class rcava cava -p ~/.config/cava/theme/saga"
+    class = "rcava"
+    size = "22% 50%"
+    position = "77% 5%"
+    lazy = true
+
+[scratchpads.lcava]
+    animation = "fromLeft"
+    command = "kitty --config ~/.config/kitty/kitty.conf --class lcava cava -p ~/.config/cava/theme/latte"
+    class = "lcava"
+    size = "22% 50%"
+    position = "1% 5%"
+    lazy = true
+
+[scratchpads.bcava]
+    animation = "fromBottom"
+    command = "kitty --config ~/.config/kitty/kitty.conf --class bcava cava -p ~/.config/cava/theme/tok-night"
+    class = "bcava"
+    size = "95% 40%"
+    position = "2% 58%"
+    lazy = true
+
+
+[fcitx5_switcher]
+    active_classes = ["wechat", "QQ", "zoom"]
+    inactive_classes = [
+        "code",
+        "kitty",
+        "google-chrome",
+    ]
+    active_titles = []
+    inactive_titles = []
